@@ -11,7 +11,7 @@ function App() {
     <>
       <div>
         <h1>{display}</h1>
-        <Button onclick={update} />
+        <Button onClick={update} />
       </div>
     </>
   );
