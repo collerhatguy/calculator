@@ -3,15 +3,17 @@ import "./App.css";
 import Button from "./Button";
 
 function App() {
-  const [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState(0);
   function update() {
-    setDisplay((prevDisplay) => (prevDisplay += "1"));
+    setDisplay(prevDisplay => prevDisplay + 1);
   }
   return (
     <>
       <div>
         <h1>{display}</h1>
-        <Button onClick={update} />
+        <button onClick={() => setDisplay(display + 1)}>1</button>
+        <button onClick={update} > 2</button>
+        <Button onClick={() => setDisplay(display + 1)} />
       </div>
     </>
   );
