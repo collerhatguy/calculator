@@ -1,7 +1,15 @@
 button {
-  width: 33vw;
-  height: 33vh;
+  font-size: 3rem;
 }
 h1 {
   font-size: 3rem;
+  text-align: center;
+}
+#calculatorContainer {
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: repeat(5, 10vh);
+  grid-template-columns: repeat(4, 20vw);
 }

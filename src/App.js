@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import "./App.css";
-import Button from "./Button";
 
 function App() {
-  const [display, setDisplay] = useState(0);
-  function update() {
-    setDisplay(prevDisplay => prevDisplay + 1);
-  }
+  const [display, setDisplay] = useState("");
   return (
     <>
-      <div>
-        <h1>{display}</h1>
-        <button onClick={() => setDisplay(display + 1)}>1</button>
-        <button onClick={update} > 2</button>
-        <Button onClick={() => setDisplay(display + 1)} />
+      <h1>{display}</h1>
+      <div id="calculatorContainer">
+        <button onClick={() => setDisplay(display + "1")}>1</button>
+        <button onClick={() => setDisplay(display + "2")}>2</button>
+        <button onClick={() => setDisplay(display + "3")}>3</button>
+        <button onClick={() => setDisplay(display + "+")}>+</button>
+        <button onClick={() => setDisplay(display + "4")}>4</button>
+        <button onClick={() => setDisplay(display + "5")}>5</button>
+        <button onClick={() => setDisplay(display + "6")}>6</button>
+        <button onClick={() => setDisplay(display + "-")}>-</button>
+        <button onClick={() => setDisplay(display + "7")}>7</button>
+        <button onClick={() => setDisplay(display + "8")}>8</button>
+        <button onClick={() => setDisplay(display + "9")}>9</button>
+        <button onClick={() => setDisplay(display + "*")}>*</button>
+        <button onClick={() => setDisplay(display + ".")}>.</button>
+        <button onClick={() => setDisplay(display + "0")}>0</button>
+        <button onClick={() => setDisplay((display = ""))}>ac</button>
+        <button onClick={() => setDisplay(display + "=")}>=</button>
       </div>
     </>
   );
