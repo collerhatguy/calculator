@@ -21,7 +21,6 @@ function App() {
         <button onClick={() => setDisplay(display + "*")}>*</button>
         <button onClick={() => setDisplay(display + ".")}>.</button>
         <button onClick={() => setDisplay(display + "0")}>0</button>
-        <button onClick={() => setDisplay("")}>ac</button>
         <button onClick={() => setDisplay(display + "=")}>=</button>
       </div>
     </>
