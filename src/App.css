@@ -13,3 +13,6 @@ h1 {
   grid-template-rows: repeat(5, 10vh);
   grid-template-columns: repeat(4, 20vw);
 }
+#displayContainer {
+  height: 2em;
+}

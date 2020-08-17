@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
+import { evaluate } from "mathjs";
 
 function App() {
   const [display, setDisplay] = useState("");
   return (
     <>
-      <h1>{display}</h1>
+      <div id="displayContainer">
+        <h1>{display}</h1>
+      </div>
       <div id="calculatorContainer">
         <button onClick={() => setDisplay(display + "1")}>1</button>
         <button onClick={() => setDisplay(display + "2")}>2</button>
@@ -21,7 +24,8 @@ function App() {
         <button onClick={() => setDisplay(display + "*")}>*</button>
         <button onClick={() => setDisplay(display + ".")}>.</button>
         <button onClick={() => setDisplay(display + "0")}>0</button>
-        <button onClick={() => setDisplay(display + "=")}>=</button>
+        <button onClick={() => setDisplay("")}>ac</button>
+        <button onClick={() => setDisplay(evaluate(display))}>=</button>
       </div>
     </>
   );
