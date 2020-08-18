@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { evaluate } from "mathjs";
 
 function App() {
   const [display, setDisplay] = useState("");
+  const [answer, setAnswer] = useEffect(
+    function () {
+      setAnswer(evaluate(display));
+    },
+    [display]
+  );
   return (
     <>
       <div id="displayContainer">
-        <h1>{display}</h1>
+        <h1>
+          {display}
+          {answer}
+        </h1>
       </div>
       <div id="calculatorContainer">
         <button onClick={() => setDisplay(display + "1")}>1</button>
