@@ -8,10 +8,10 @@ function App() {
   return (
     <>
       <div id="displayContainer">
-        <h1>
+        <h2>
           {display}
           {answer}
-        </h1>
+        </h2>
       </div>
       <div id="calculatorContainer">
         <button onClick={() => setDisplay((prevDisplay) => prevDisplay + "1")}>
