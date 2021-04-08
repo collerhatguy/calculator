@@ -1,0 +1,21 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+#root{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#calculatorContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 20vw);
+}
+button {
+    font-size: 20px;
+    width: 18vw;
+    margin-top: .2em;
+}

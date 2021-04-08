@@ -1,16 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { evaluate } from "mathjs";
-
+import "./App.css"
 function App() {
   const [display, setDisplay] = useState("");
-  const [answer, setAnswer] = useState(0);
-  useEffect(setAnswer(evaluate(display)), [display]);
+  const [answer, setAnswer] = useState("");
+  const findAnswer = () => {
+    setAnswer(evaluate(display))
+    setDisplay("")
+  }
+  const inputs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "/", "*"]
   return (
     <>
       <div id="displayContainer">
         <h2>
-          {display}
-          {answer}
+          <div>
+            {display} =
+          </div>
+          <div>
+            {answer}
+          </div>
         </h2>
       </div>
       <div id="calculatorContainer">
@@ -54,7 +62,7 @@ function App() {
           *
         </button>
         <button onClick={() => setDisplay("")}>ac</button>
-        <button onClick={() => setDisplay(evaluate(display))}>=</button>
+        <button onClick={() => findAnswer()}>=</button>
       </div>
     </>
   );
