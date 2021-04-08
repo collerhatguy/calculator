@@ -1,8 +1,10 @@
-import React from 'react'
 
-export default function ButtonList({inputs, setDisplay}) {
+import React from 'react'
+import Input from "./Input"; 
+
+export default function ButtonList({inputs, setDisplay, allClear, findAnswer}) {
     return (
-        <div>
+        <div className="buttons">
             {inputs.map((input, index) => {
                 return <Input 
                             input={input} 
@@ -10,6 +12,8 @@ export default function ButtonList({inputs, setDisplay}) {
                             key={index}
                         />
             })}
+            <button onClick={() => allClear()}>ac</button>
+            <button onClick={() => findAnswer()}>=</button>
         </div>
     )
 }

@@ -10,7 +10,7 @@
     align-items: center;
     flex-direction: column;
 }
-#calculatorContainer {
+.buttons {
     display: grid;
     grid-template-columns: repeat(3, 20vw);
 }
