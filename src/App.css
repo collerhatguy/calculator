@@ -10,9 +10,13 @@
     align-items: center;
     flex-direction: column;
 }
+#displayContainer {
+    border: dotted 5px black;
+    padding: .2em;
+}
 .buttons {
     display: grid;
-    grid-template-columns: repeat(3, 20vw);
+    grid-template-columns: repeat(4, 20vw);
 }
 button {
     font-size: 20px;

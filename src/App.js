@@ -7,13 +7,13 @@ function App() {
   const [answer, setAnswer] = useState("");
   const findAnswer = () => {
     setAnswer(evaluate(display))
-    setDisplay("")
+    setDisplay(evaluate(display))
   }
   const allClear = () => {
     setAnswer("")
     setDisplay("")
   }
-  const inputs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "/", "*"]
+  const inputs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", ".", "/", "*", "^", "(", ")"]
   return (
     <>
       <div id="displayContainer">
