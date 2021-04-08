@@ -5,6 +5,7 @@ import Input from "./Input";
 export default function ButtonList({inputs, setDisplay, allClear, findAnswer}) {
     return (
         <div className="buttons">
+            <button onClick={() => allClear()}>ac</button>
             {inputs.map((input, index) => {
                 return <Input 
                             input={input} 
@@ -12,7 +13,6 @@ export default function ButtonList({inputs, setDisplay, allClear, findAnswer}) {
                             key={index}
                         />
             })}
-            <button onClick={() => allClear()}>ac</button>
             <button onClick={() => findAnswer()}>=</button>
         </div>
     )

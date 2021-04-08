@@ -13,6 +13,8 @@
 #displayContainer {
     border: dotted 5px black;
     padding: .2em;
+    width: 70%;
+    text-align: center;
 }
 .buttons {
     display: grid;
