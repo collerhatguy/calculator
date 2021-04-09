@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { evaluate } from "mathjs";
 import ButtonList from "./components/ButtonList";
 import "./App.css"
+
 function App() {
   const [display, setDisplay] = useState("");
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState("");
   const findAnswer = () => {
-    if (!verifyInput(answer)) return;
+    // if we get an error message return
+    if (!verifyInput(display)) return;
     setAnswer(evaluate(display))
     setDisplay(evaluate(display))
   }
@@ -15,20 +17,27 @@ function App() {
     setAnswer("")
     setDisplay("")
   }
-  // fro stopping invalid inputs
+  // for stopping invalid inputs
   const verifyInput = (answer) => {
+    const firstCharacter = answer.substring(0,1);
+    const lastCharacter = answer.substring(answer.length - 1);
+    console.log(lastCharacter);
+    if (answer.length === 0) {
+      setError("You cannot send nothing");
+      return false;
+    }
     // if ending in any invalid expression end accordingly
-    if (invalidEndInputs.includes(answer.substring(answer.length - 2, answer.length - 1))) {
+    if (invalidEndInputs.includes(lastCharacter)) {
       setError("You cannot end a subbmission that way");
       return false;
     }
     // if starts off invalid then return invalid
-    if (invalidStartInputs.includes(answer.substring(0, 1))) {
+    if (invalidStartInputs.includes(firstCharacter)) {
       setError("You cannot start a subbmission that way");
       return false;
     }
     setError("")
-    return true;
+    return true;;
   }
   const inputs = [ "*", "^", ".", "1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "/", "(", "0", ")",]
   const invalidEndInputs = [ "*", "^", ".", "-", "/", "(",]
