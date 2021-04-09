@@ -11,18 +11,11 @@ export default function useVerify(input) {
     const [validity, setValidity] = useState(true);
     // for stopping invalid inputs
     const verifyInput = (answer) => {
-        
-        if (answer.length === 0) {
-            setErrorMessage("You cannot calculate nothing");
-            setValidity(false);
-            return;
-        } 
-        // if there is more than one character than set the variables
-        // represents parenthesis in our answer
-        
+
+        if (!checkLength(answer, setErrorMessage, setValidity)) return; 
         if (!checkEnd(answer, setErrorMessage, setValidity)) return; 
         if (!checkStart(answer, setErrorMessage, setValidity)) return; 
-        
+        // if there are no errors than continue 
         setErrorMessage("");
         setValidity(true);
         return;
@@ -74,4 +67,12 @@ const checkStart = (answer, setErrorMessage, setValidity) => {
         return false;
     } 
     return true
+}
+const checkLength = (answer, setErrorMessage, setValidity) => {
+    if (answer.length === 0) {
+        setErrorMessage("cannont calculate nothing")
+        setValidity(false)
+        return false;
+    }
+    return true;
 }
