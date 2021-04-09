@@ -15,27 +15,28 @@ export default function useVerify(input) {
     const verifyInput = (answer) => {
         
         if (answer.length === 0) {
-            setErrorMessage("You cannot send nothing");
+            setErrorMessage("You cannot calculate nothing");
             setValidity(false);
             return;
         } 
         // if there is more than one character than set the variables
         const firstCharacter = answer.substring(0,1);
         const lastCharacter = answer.substring(answer.length - 1);
-
+        // represents parenthesis in our answer
+        
         if (invalidEndInputs.includes(lastCharacter)) {
             setErrorMessage("You cannot end a subbmission that way");
             setValidity(false);
             return;
-        } if (invalidStartInputs.includes(firstCharacter)) {
+        } 
+        if (invalidStartInputs.includes(firstCharacter)) {
             setErrorMessage("You cannot start a subbmission that way");
             setValidity(false);
             return;
-        } else {
-            setErrorMessage("");
-            setValidity(true);
-            return;
-        }
+        } 
+        setErrorMessage("");
+        setValidity(true);
+        return;
     }
     useEffect(() => {
         verifyInput(input)
@@ -44,4 +45,24 @@ export default function useVerify(input) {
         }, 500)
     }, [input])
     return [validity, errorMessage]
+}
+
+const parenthesesCheck = (answer, setErrorMessage, setValidity) => {
+    var parenthesesCount = 0;
+    parenthesesCheck: for (var i = 0; i < answer.length; i++) {
+        if (answer.charAt(i) == "(") parenthesesCount++;
+        if (answer.charAt(i) == ")") parenthesesCount--;
+        // if our count ever dips below zero then a closing parentheses is out of order
+        if (parenthesesCount < 0) {
+            setErrorMessage("invalid parentheses")
+            setValidity(false)
+            return
+        }
+    }
+    // if out count doest return to zero than the parentheses are unequel
+    if (!parenthesesCount === 0) {
+        setErrorMessage("invalid parentheses")
+        setValidity(false)
+        return
+    }
 }
