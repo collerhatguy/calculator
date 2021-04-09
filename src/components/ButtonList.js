@@ -2,7 +2,9 @@
 import React from 'react'
 import Input from "./Input"; 
 
-export default function ButtonList({inputs, setDisplay, allClear, findAnswer}) {
+export default function ButtonList({setDisplay, allClear, findAnswer}) {
+
+    const inputs = [ "*", "^", ".", "1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "/", "(", "0", ")",];
     return (
         <div className="buttons">
             <button className="ac" onClick={() => allClear()}>ac</button>

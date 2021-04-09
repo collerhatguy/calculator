@@ -19,11 +19,10 @@ function App() {
     setAnswer("")
     setDisplay("")
   }
-  const inputs = [ "*", "^", ".", "1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "/", "(", "0", ")",];
   return (
     <div className="app">
       <Display error={errorMessage} display={display} answer={answer} />
-      <ButtonList inputs={inputs} setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer}/>
+      <ButtonList setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer}/>
     </div>
   );
 }
