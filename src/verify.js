@@ -7,8 +7,6 @@ import {useState, useEffect} from "react"
 
 
 export default function useVerify(input) {
-    const invalidEndInputs = [ "*", "+", "^", ".", "-", "/", "("]
-    const invalidStartInputs = [ "*",  "+", "^", ".", "-", "/", ")"]
     const [errorMessage, setErrorMessage] = useState("");
     const [validity, setValidity] = useState(true);
     // for stopping invalid inputs
@@ -20,20 +18,11 @@ export default function useVerify(input) {
             return;
         } 
         // if there is more than one character than set the variables
-        const firstCharacter = answer.substring(0,1);
-        const lastCharacter = answer.substring(answer.length - 1);
         // represents parenthesis in our answer
         
-        if (invalidEndInputs.includes(lastCharacter)) {
-            setErrorMessage("You cannot end a subbmission that way");
-            setValidity(false);
-            return;
-        } 
-        if (invalidStartInputs.includes(firstCharacter)) {
-            setErrorMessage("You cannot start a subbmission that way");
-            setValidity(false);
-            return;
-        } 
+        if (!checkEnd(answer, setErrorMessage, setValidity)) return; 
+        if (!checkStart(answer, setErrorMessage, setValidity)) return; 
+        
         setErrorMessage("");
         setValidity(true);
         return;
@@ -65,4 +54,24 @@ const parenthesesCheck = (answer, setErrorMessage, setValidity) => {
         setValidity(false)
         return
     }
+}
+const checkEnd = (answer, setErrorMessage, setValidity) => {
+    const invalidEndInputs = [ "*", "+", "^", ".", "-", "/", "("]
+    const lastCharacter = answer.substring(answer.length - 1);
+    if (invalidEndInputs.includes(lastCharacter)) {
+        setErrorMessage("You cannot end a calcullation that way");
+        setValidity(false);
+        return false;
+    } 
+    return true
+}
+const checkStart = (answer, setErrorMessage, setValidity) => {
+    const invalidStartInputs = [ "*",  "+", "^", ".", "-", "/", ")"]
+    const firstCharacter = answer.substring(0,1);
+    if (invalidStartInputs.includes(firstCharacter)) {
+        setErrorMessage("You cannot start a calcullation that way");
+        setValidity(false);
+        return false;
+    } 
+    return true
 }
