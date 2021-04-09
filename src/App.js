@@ -13,7 +13,7 @@ function App() {
     // if we get an error message return
     if (!validity) return;
     setAnswer(evaluate(display))
-    setDisplay(evaluate(display))
+    setDisplay(JSON.stringify(evaluate(display)))
   }
   const allClear = () => {
     setAnswer("")
