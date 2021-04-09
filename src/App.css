@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
 }
-#root{
+#root, .app{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -19,6 +19,21 @@
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 20vw);
+}
+.number {
+    background-color: black;
+    color: whitesmoke;
+}
+.non-number {
+    color: black;
+    background-color: whitesmoke;
+}
+.ac {
+    background-color: red;
+}
+.equals {
+    background-color: black;
+    color: red;
 }
 button {
     font-size: 20px;

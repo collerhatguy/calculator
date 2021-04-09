@@ -5,7 +5,7 @@ import Input from "./Input";
 export default function ButtonList({inputs, setDisplay, allClear, findAnswer}) {
     return (
         <div className="buttons">
-            <button onClick={() => allClear()}>ac</button>
+            <button className="ac" onClick={() => allClear()}>ac</button>
             {inputs.map((input, index) => {
                 return <Input 
                             input={input} 
@@ -13,7 +13,7 @@ export default function ButtonList({inputs, setDisplay, allClear, findAnswer}) {
                             key={index}
                         />
             })}
-            <button onClick={() => findAnswer()}>=</button>
+            <button className="equals" onClick={() => findAnswer()}>=</button>
         </div>
     )
 }
