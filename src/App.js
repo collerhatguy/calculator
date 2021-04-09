@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { evaluate } from "mathjs";
 import ButtonList from "./components/ButtonList";
+import Display from "./components/Display";
 import "./App.css"
 
 function App() {
@@ -21,7 +22,6 @@ function App() {
   const verifyInput = (answer) => {
     const firstCharacter = answer.substring(0,1);
     const lastCharacter = answer.substring(answer.length - 1);
-    console.log(lastCharacter);
     if (answer.length === 0) {
       setError("You cannot send nothing");
       return false;
@@ -44,19 +44,7 @@ function App() {
   const invalidStartInputs = [ "*", "^", ".", "-", "/", ")"]
   return (
     <>
-      <div id="displayContainer">
-        <h2>
-          <div>
-            {error}
-          </div>
-          <div>
-            {display} =
-          </div>
-          <div>
-            {answer}
-          </div>
-        </h2>
-      </div>
+      <Display error={error} display={display} answer={answer} />
       <div id="calculatorContainer">
         <ButtonList inputs={inputs} setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer}/>
       </div>
