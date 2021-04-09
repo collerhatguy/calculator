@@ -22,14 +22,11 @@ export default function useVerify(input) {
     }
     useEffect(() => {
         verifyInput(input)
-        setTimeout(() => {
-            console.log(validity, errorMessage)
-        }, 500)
     }, [input])
     return [validity, errorMessage]
 }
 
-const parenthesesCheck = (answer, setErrorMessage, setValidity) => {
+const checkParentheses = (answer, setErrorMessage, setValidity) => {
     var parenthesesCount = 0;
     parenthesesCheck: for (var i = 0; i < answer.length; i++) {
         if (answer.charAt(i) == "(") parenthesesCount++;
@@ -52,7 +49,7 @@ const checkEnd = (answer, setErrorMessage, setValidity) => {
     const invalidEndInputs = [ "*", "+", "^", ".", "-", "/", "("]
     const lastCharacter = answer.substring(answer.length - 1);
     if (invalidEndInputs.includes(lastCharacter)) {
-        setErrorMessage("You cannot end a calcullation that way");
+        setErrorMessage("You cannot end a calculation that way");
         setValidity(false);
         return false;
     } 
@@ -62,7 +59,7 @@ const checkStart = (answer, setErrorMessage, setValidity) => {
     const invalidStartInputs = [ "*",  "+", "^", ".", "-", "/", ")"]
     const firstCharacter = answer.substring(0,1);
     if (invalidStartInputs.includes(firstCharacter)) {
-        setErrorMessage("You cannot start a calcullation that way");
+        setErrorMessage("You cannot start a calculation that way");
         setValidity(false);
         return false;
     } 
