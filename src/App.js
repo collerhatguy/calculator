@@ -24,7 +24,7 @@ function App() {
     <div className="app">
       <Display error={errorMessage} display={display} answer={answer} />
       <ButtonList setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer} advanced={advanced}/>
-      <button onClick={() => setAdvanced(!advanced)}>Advanced</button>
+      <button className="advanced-button" onClick={() => setAdvanced(!advanced)}>Advanced</button>
     </div>
   );
 }

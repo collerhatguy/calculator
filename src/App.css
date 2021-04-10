@@ -1,8 +1,12 @@
+
+:root {
+    --button-size: 9vw;
+}
 * {
     margin: 0px;
     padding: 0px;
 }
-#root, .app{
+#root, .app {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -18,11 +22,16 @@
 }
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 20vw);
+    grid-template-columns: repeat(4, calc(var(--button-size) + 2vw));
 }
 .buttons-advanced {
     display: grid;
-    grid-template-columns: repeat(4, 20vw);
+    grid-template-columns: repeat(5, calc(var(--button-size) + 2vw));
+    grid-template-rows: repeat(2, calc(var(--button-size) + 2vw));
+    animation: rising 500ms linear forwards;
+}
+.hidden {
+    display: none;
 }
 .number {
     background-color: black;
@@ -41,8 +50,17 @@
 }
 button {
     font-size: 20px;
-    width: 18vw;
+    width: var(--button-size);
+    height: var(--button-size);
     margin-top: .2em;
     color: black;
     background-color: whitesmoke;
+}
+.advanced-button {
+    width: max-content;
+    padding: .2em;
+}
+@keyframes rising {
+    from {height: 0vw;}
+    to {height: var(--button-size);}
 }
