@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { evaluate } from "mathjs";
 import ButtonList from "./components/ButtonList";
-import ButtonListAdvanced from "./components/ButtonListAdvanced";
 import Display from "./components/Display";
 import useVerify from "./verify";
 import "./App.css"
@@ -25,8 +24,7 @@ function App() {
     <div className="app">
       <Display error={errorMessage} display={display} answer={answer} />
       <ButtonList setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer} advanced={advanced}/>
-      <ButtonListAdvanced setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer} advanced={advanced}/>
-      
+      <button onClick={() => setAdvanced(!advanced)}>Advanced</button>
     </div>
   );
 }

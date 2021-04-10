@@ -39,4 +39,6 @@ button {
     font-size: 20px;
     width: 18vw;
     margin-top: .2em;
+    color: black;
+    background-color: whitesmoke;
 }
