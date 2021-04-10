@@ -1,4 +1,12 @@
+/* tabe of contents */
+/* 1. varibales and default stats */
+/* 2. display container */
+/* 3. buttons spacing*/
+/* 4. buttons styling */
+/* 5. animation */
 
+
+/* 1. varibales and default stats */
 :root {
     --button-size: 9vw;
 }
@@ -14,12 +22,16 @@
     align-items: center;
     flex-direction: column;
 }
+
+/* 2. display container */
 #displayContainer {
     border: dotted 5px black;
     padding: .2em;
     width: 70%;
     text-align: center;
 }
+
+/* 3. buttons spacing*/
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, calc(var(--button-size) + 2vw));
@@ -30,9 +42,7 @@
     grid-template-rows: repeat(2, calc(var(--button-size) + 2vw));
     animation: rising 500ms linear forwards;
 }
-.hidden {
-    display: none;
-}
+/* 4. buttons styling */
 .number {
     background-color: black;
     color: whitesmoke;
@@ -60,7 +70,14 @@ button {
     width: max-content;
     padding: .2em;
 }
+
+/* 5. animation */
+
 @keyframes rising {
     from {height: 0vw;}
     to {height: var(--button-size);}
+}
+
+.hidden {
+    display: none;
 }
