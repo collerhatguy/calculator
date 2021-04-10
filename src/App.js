@@ -8,6 +8,7 @@ import "./App.css"
 function App() {
   const [display, setDisplay] = useState("");
   const [answer, setAnswer] = useState("");
+  const [advanced, setAdvanced] = useState(false);
   const [validity, errorMessage] = useVerify(display);
   const findAnswer = () => {
     // if we get an error message return
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="app">
       <Display error={errorMessage} display={display} answer={answer} />
-      <ButtonList setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer}/>
+      <ButtonList setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer} advanced={advanced}/>
     </div>
   );
 }
