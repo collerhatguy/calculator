@@ -20,6 +20,10 @@
     display: grid;
     grid-template-columns: repeat(4, 20vw);
 }
+.buttons-advanced {
+    display: grid;
+    grid-template-columns: repeat(4, 20vw);
+}
 .number {
     background-color: black;
     color: whitesmoke;

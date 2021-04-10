@@ -5,9 +5,13 @@ export default function AdvancedButtons({setDisplay, advanced}) {
     const style = {
         display: advanced ? "grid" : "none",
     }
-    const advancedInputs = []
+    // would like to add ln and square root
+    const advancedInputs = ["cos(", "sin(", "tan(","e", "log(",]
     return (
-        <div className="buttons-advanced" style={style}>
-        </div>
+        <span className="buttons-advanced" style={style}>
+            {advancedInputs.map(input => {
+                return <Input input={input} setDisplay={() => setDisplay(prevDisplay => prevDisplay + input)} />
+            })}
+        </span>
     )
 }
