@@ -1,5 +1,8 @@
 /* tabe of contents */
 /* 1. varibales and default stats */
+/*      a. variables */
+/*      b. centering */
+/*      c. mixins */
 /* 2. display container */
 /* 3. buttons spacing*/
 /* 4. buttons styling */
@@ -10,6 +13,7 @@
   padding: 0px;
 }
 
+/*      b. centering */
 #root, .app {
   width: 100vw;
   height: 100vh;
@@ -28,6 +32,7 @@
           flex-direction: column;
 }
 
+/*      c. mixins */
 /* 2. display container */
 #displayContainer {
   border: dotted 5px black;
@@ -56,9 +61,18 @@
 }
 
 /* 4. buttons styling */
+button {
+  font-size: 20px;
+  width: 9vw;
+  height: 9vw;
+  margin-top: .2em;
+  color: black;
+  background-color: white;
+}
+
 .number {
-  background-color: black;
   color: white;
+  background-color: black;
 }
 
 .non-number {
@@ -75,20 +89,15 @@
   color: red;
 }
 
-button {
-  font-size: 20px;
-  width: var(--button-size);
-  height: var(--button-size);
-  margin-top: .2em;
-  color: black;
-  background-color: white;
-}
-
 .advanced-button {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  padding: .2em;
+  font-size: 20px;
+  width: 9vw;
+  height: 9vw;
+  margin-top: .2em;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 0 .2em;
 }
 
 /* 5. animation */

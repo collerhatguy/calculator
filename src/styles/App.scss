@@ -1,5 +1,8 @@
 /* tabe of contents */
 /* 1. varibales and default stats */
+/*      a. variables */
+/*      b. centering */
+/*      c. mixins */
 /* 2. display container */
 /* 3. buttons spacing*/
 /* 4. buttons styling */
@@ -7,6 +10,7 @@
 
 
 /* 1. varibales and default stats */
+    // a. variables
 $button-size: 9vw;
 $primary-color: black;
 $secondary-color: white;
@@ -16,6 +20,8 @@ $tertiary-color: red;
     margin: 0px;
     padding: 0px;
 }
+
+/*      b. centering */
 #root, .app {
     width: 100vw;
     height: 100vh;
@@ -23,6 +29,14 @@ $tertiary-color: red;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+/*      c. mixins */
+
+@mixin button() {
+    font-size: 20px;
+    width: $button-size;
+    height: $button-size;
+    margin-top: .2em;
 }
 
 /* 2. display container */
@@ -45,9 +59,15 @@ $tertiary-color: red;
     animation: rising 500ms linear forwards;
 }
 /* 4. buttons styling */
+
+button {
+    @include button();
+    color: $primary-color;
+    background-color: $secondary-color;
+}
 .number {
-    background-color: $primary-color;
     color: $secondary-color;
+    background-color: $primary-color;
 }
 .non-number {
     color: $primary-color;
@@ -60,17 +80,10 @@ $tertiary-color: red;
     background-color: $primary-color;
     color: $tertiary-color;
 }
-button {
-    font-size: 20px;
-    width: var(--button-size);
-    height: var(--button-size);
-    margin-top: .2em;
-    color: $primary-color;
-    background-color: $secondary-color;
-}
 .advanced-button {
-    width: max-content;
-    padding: .2em;
+    @include button();
+    width: min-content;
+    padding: 0 .2em;
 }
 
 /* 5. animation */
