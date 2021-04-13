@@ -75,3 +75,15 @@ const checkLength = (answer, setErrorMessage, setValidity) => {
     }
     return true;
 }
+const verifyOrder = (answer, setErrorMessage, setValidity) => {
+    const invalidNextToEachOther = ["*", "+", "^", "/", "-"]
+    for (var i = 0; i < answer.length; i++) {
+        if (!answer.charAt(i-1)) break;
+        if (invalidNextToEachOther.includes(answer.charAt(i-1)) && invalidNextToEachOther.includes(answer.charAt(i))) {
+            setErrorMessage("thos two cant be next to each other")
+            setValidity(false)
+            return false;
+        }
+        return true;
+    }
+}
