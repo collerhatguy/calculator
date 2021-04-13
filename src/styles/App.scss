@@ -53,7 +53,7 @@ $tertiary-color: red;
 }
 @media screen and (min-width: 521px) and (max-width: 721) {
     @mixin button() {
-        font-size: 25px;
+        font-size: 40px;
         width: $button-size-large;
         height: $button-size-large;
         margin: .2em;
