@@ -45,10 +45,11 @@ const checkParentheses = (answer, setErrorMessage, setValidity) => {
         setValidity(false)
         return
     }
+    return true;
 }
 const checkEnd = (answer, setErrorMessage, setValidity) => {
     const invalidEndInputs = [ "*", "+", "^", ".", "-", "/", "("]
-    const lastCharacter = answer.substring(answer.length - 1);
+    const lastCharacter = answer.charAt(answer.length - 1);
     if (invalidEndInputs.includes(lastCharacter)) {
         setErrorMessage("You cannot end a calculation that way");
         setValidity(false);
@@ -58,7 +59,7 @@ const checkEnd = (answer, setErrorMessage, setValidity) => {
 }
 const checkStart = (answer, setErrorMessage, setValidity) => {
     const invalidStartInputs = [ "*", "+", "^", ".", "-", "/", ")"]
-    const firstCharacter = answer.substring(0,1);
+    const firstCharacter = answer.charAt(0);
     if (invalidStartInputs.includes(firstCharacter)) {
         setErrorMessage("You cannot start a calculation that way");
         setValidity(false);
