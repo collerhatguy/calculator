@@ -42,7 +42,19 @@
 }
 
 /* 3. buttons spacing*/
-.buttons {
+.all-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.normal-buttons {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (11vw)[4];
@@ -52,12 +64,13 @@
 .buttons-advanced {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (11vw)[5];
-      grid-template-columns: repeat(5, 11vw);
-  -ms-grid-rows: (11vw)[2];
-      grid-template-rows: repeat(2, 11vw);
+  -ms-grid-columns: 11vw;
+      grid-template-columns: 11vw;
+  -ms-grid-rows: (10vw)[5];
+      grid-template-rows: repeat(5, 10vw);
   -webkit-animation: rising 500ms linear forwards;
           animation: rising 500ms linear forwards;
+  margin: .2em;
 }
 
 /* 4. buttons styling */
@@ -65,7 +78,7 @@ button {
   font-size: 20px;
   width: 9vw;
   height: 9vw;
-  margin-top: .2em;
+  margin: .2em;
   color: black;
   background-color: white;
 }
@@ -93,7 +106,7 @@ button {
   font-size: 20px;
   width: 9vw;
   height: 9vw;
-  margin-top: .2em;
+  margin: .2em;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -103,18 +116,22 @@ button {
 /* 5. animation */
 @-webkit-keyframes rising {
   from {
-    height: 0vw;
+    width: 0vw;
+    opacity: 0;
   }
   to {
-    height: 9vw;
+    width: 9vw;
+    opacity: 1;
   }
 }
 @keyframes rising {
   from {
-    height: 0vw;
+    width: 0vw;
+    opacity: 0;
   }
   to {
-    height: 9vw;
+    width: 9vw;
+    opacity: 1;
   }
 }
 

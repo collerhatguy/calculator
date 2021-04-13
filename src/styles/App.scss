@@ -36,7 +36,7 @@ $tertiary-color: red;
     font-size: 20px;
     width: $button-size;
     height: $button-size;
-    margin-top: .2em;
+    margin: .2em;
 }
 
 /* 2. display container */
@@ -48,15 +48,21 @@ $tertiary-color: red;
 }
 
 /* 3. buttons spacing*/
-.buttons {
+.all-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.normal-buttons {
     display: grid;
     grid-template-columns: repeat(4, $button-size + 2vw);
 }
 .buttons-advanced {
     display: grid;
-    grid-template-columns: repeat(5, $button-size + 2vw);
-    grid-template-rows: repeat(2, $button-size + 2vw);
+    grid-template-columns: $button-size + 2vw;
+    grid-template-rows: repeat(5, $button-size + 1vw);
     animation: rising 500ms linear forwards;
+    margin: .2em;
 }
 /* 4. buttons styling */
 
@@ -89,8 +95,14 @@ button {
 /* 5. animation */
 
 @keyframes rising {
-    from {height: 0vw;}
-    to {height: $button-size;}
+    from {
+        width: 0vw;
+        opacity: 0;
+    }
+    to {
+        width: $button-size;
+        opacity: 1;
+    }
 }
 
 .hidden {

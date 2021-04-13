@@ -6,9 +6,9 @@ import AdvancedButtons from "./AdvancedButtons";
 export default function ButtonList({setDisplay, allClear, findAnswer, advanced}) {
     const inputs = [ "*", "^", ".", "1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "/", "(", "0", ")",];
     return (
-        <div >
+        <div className="all-buttons">
             <AdvancedButtons setDisplay={setDisplay} advanced={advanced}/>
-            <div className="buttons">
+            <div className="normal-buttons">
                 <button className="ac" onClick={() => allClear()}>ac</button>
                 {inputs.map((input, index) => {
                     return <Input 
