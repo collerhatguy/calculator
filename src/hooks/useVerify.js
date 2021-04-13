@@ -15,6 +15,7 @@ export default function useVerify(input) {
         if (!checkLength(answer, setErrorMessage, setValidity)) return; 
         if (!checkEnd(answer, setErrorMessage, setValidity)) return; 
         if (!checkStart(answer, setErrorMessage, setValidity)) return; 
+        if (!checkParentheses(answer, setErrorMessage, setValidity)) return; 
         // if there are no errors than continue 
         setErrorMessage("");
         setValidity(true);
@@ -28,19 +29,19 @@ export default function useVerify(input) {
 
 const checkParentheses = (answer, setErrorMessage, setValidity) => {
     var parenthesesCount = 0;
-    parenthesesCheck: for (var i = 0; i < answer.length; i++) {
-        if (answer.charAt(i) == "(") parenthesesCount++;
-        if (answer.charAt(i) == ")") parenthesesCount--;
+    for (var i = 0; i < answer.length; i++) {
+        if (answer.charAt(i) === "(") parenthesesCount++;
+        if (answer.charAt(i) === ")") parenthesesCount--;
         // if our count ever dips below zero then a closing parentheses is out of order
         if (parenthesesCount < 0) {
-            setErrorMessage("invalid parentheses")
+            setErrorMessage("Invalid parentheses")
             setValidity(false)
             return
         }
     }
     // if out count doest return to zero than the parentheses are unequel
     if (!parenthesesCount === 0) {
-        setErrorMessage("invalid parentheses")
+        setErrorMessage("Invalid parentheses")
         setValidity(false)
         return
     }
@@ -56,7 +57,7 @@ const checkEnd = (answer, setErrorMessage, setValidity) => {
     return true
 }
 const checkStart = (answer, setErrorMessage, setValidity) => {
-    const invalidStartInputs = [ "*",  "+", "^", ".", "-", "/", ")"]
+    const invalidStartInputs = [ "*", "+", "^", ".", "-", "/", ")"]
     const firstCharacter = answer.substring(0,1);
     if (invalidStartInputs.includes(firstCharacter)) {
         setErrorMessage("You cannot start a calculation that way");

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { evaluate } from "mathjs";
 import ButtonList from "./components/ButtonList";
 import Display from "./components/Display";
-import useVerify from "./verify";
-import "./App.css"
+import useVerify from "./hooks/useVerify";
+import "./styles/App.css"
 
 function App() {
   const [display, setDisplay] = useState("");

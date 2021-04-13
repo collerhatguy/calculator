@@ -1,0 +1,115 @@
+/* tabe of contents */
+/* 1. varibales and default stats */
+/* 2. display container */
+/* 3. buttons spacing*/
+/* 4. buttons styling */
+/* 5. animation */
+/* 1. varibales and default stats */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#root, .app {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* 2. display container */
+#displayContainer {
+  border: dotted 5px black;
+  padding: .2em;
+  width: 70%;
+  text-align: center;
+}
+
+/* 3. buttons spacing*/
+.buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (11vw)[4];
+      grid-template-columns: repeat(4, 11vw);
+}
+
+.buttons-advanced {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (11vw)[5];
+      grid-template-columns: repeat(5, 11vw);
+  -ms-grid-rows: (11vw)[2];
+      grid-template-rows: repeat(2, 11vw);
+  -webkit-animation: rising 500ms linear forwards;
+          animation: rising 500ms linear forwards;
+}
+
+/* 4. buttons styling */
+.number {
+  background-color: black;
+  color: white;
+}
+
+.non-number {
+  color: black;
+  background-color: white;
+}
+
+.ac {
+  background-color: red;
+}
+
+.equals {
+  background-color: black;
+  color: red;
+}
+
+button {
+  font-size: 20px;
+  width: var(--button-size);
+  height: var(--button-size);
+  margin-top: .2em;
+  color: black;
+  background-color: white;
+}
+
+.advanced-button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: .2em;
+}
+
+/* 5. animation */
+@-webkit-keyframes rising {
+  from {
+    height: 0vw;
+  }
+  to {
+    height: 9vw;
+  }
+}
+@keyframes rising {
+  from {
+    height: 0vw;
+  }
+  to {
+    height: 9vw;
+  }
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=App.css.map */
