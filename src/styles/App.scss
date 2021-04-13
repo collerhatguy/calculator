@@ -3,6 +3,7 @@
 /*      a. variables */
 /*      b. centering */
 /*      c. mixins */
+/*      d. media queries */
 /* 2. display container */
 /* 3. buttons spacing*/
 /* 4. buttons styling */
@@ -12,6 +13,8 @@
 /* 1. varibales and default stats */
     // a. variables
 $button-size: 9vw;
+$button-size-medium: 14vw;
+$button-size-large: 19vw;
 $primary-color: black;
 $secondary-color: white;
 $tertiary-color: red;
@@ -37,6 +40,24 @@ $tertiary-color: red;
     width: $button-size;
     height: $button-size;
     margin: .2em;
+}
+/*      d. media queries */
+
+@media screen and (max-width: 521px) {
+    @mixin button() {
+        font-size: 25px;
+        width: $button-size-medium;
+        height: $button-size-medium;
+        margin: .2em;
+    }
+}
+@media screen and (min-width: 521px) and (max-width: 721) {
+    @mixin button() {
+        font-size: 25px;
+        width: $button-size-large;
+        height: $button-size-large;
+        margin: .2em;
+    }
 }
 
 /* 2. display container */

@@ -3,6 +3,7 @@
 /*      a. variables */
 /*      b. centering */
 /*      c. mixins */
+/*      d. media queries */
 /* 2. display container */
 /* 3. buttons spacing*/
 /* 4. buttons styling */
@@ -33,6 +34,7 @@
 }
 
 /*      c. mixins */
+/*      d. media queries */
 /* 2. display container */
 #displayContainer {
   border: dotted 5px black;
