@@ -16,6 +16,7 @@ export default function useVerify(input) {
         if (!checkEnd(answer, setErrorMessage, setValidity)) return; 
         if (!checkStart(answer, setErrorMessage, setValidity)) return; 
         if (!checkParentheses(answer, setErrorMessage, setValidity)) return; 
+        if (!checkOrder(answer, setErrorMessage, setValidity)) return; 
         // if there are no errors than continue 
         setErrorMessage("");
         setValidity(true);
@@ -58,7 +59,7 @@ const checkEnd = (answer, setErrorMessage, setValidity) => {
     return true
 }
 const checkStart = (answer, setErrorMessage, setValidity) => {
-    const invalidStartInputs = [ "*", "+", "^", ".", "-", "/", ")"]
+    const invalidStartInputs = [ "*", "+", "^", "/", ")"]
     const firstCharacter = answer.charAt(0);
     if (invalidStartInputs.includes(firstCharacter)) {
         setErrorMessage("You cannot start a calculation that way");
@@ -69,21 +70,21 @@ const checkStart = (answer, setErrorMessage, setValidity) => {
 }
 const checkLength = (answer, setErrorMessage, setValidity) => {
     if (answer.length === 0) {
-        setErrorMessage("cannont calculate nothing")
+        setErrorMessage("Cannont calculate nothing")
         setValidity(false)
         return false;
     }
     return true;
 }
-const verifyOrder = (answer, setErrorMessage, setValidity) => {
+const checkOrder = (answer, setErrorMessage, setValidity) => {
     const invalidNextToEachOther = ["*", "+", "^", "/", "-"]
     for (var i = 0; i < answer.length; i++) {
-        if (!answer.charAt(i-1)) break;
+        if (!answer.charAt(i-1)) continue;
         if (invalidNextToEachOther.includes(answer.charAt(i-1)) && invalidNextToEachOther.includes(answer.charAt(i))) {
-            setErrorMessage("thos two cant be next to each other")
+            setErrorMessage("Those two cant be next to each other")
             setValidity(false)
             return false;
         }
-        return true;
     }
+    return true;
 }
