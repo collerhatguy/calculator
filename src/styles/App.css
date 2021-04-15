@@ -4,7 +4,7 @@
 /*      b. centering */
 /*      c. mixins */
 /* 2. display container */
-/* 3. buttons spacing*/
+/* 3. buttons spacing */
 /* 4. buttons styling */
 /* 5. animation */
 /* 6. media queries */
@@ -41,7 +41,17 @@
   text-align: center;
 }
 
-/* 3. buttons spacing*/
+#ghost-answer {
+  color: grey;
+  background-color: black;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 0 .2em;
+  margin: 0 auto;
+}
+
+/* 3. buttons spacing */
 .all-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,15 +150,18 @@ button {
 }
 
 /* 6. media queries */
-@media screen and (max-width: 521px) {
+@media screen and (max-width: 360px) {
   button {
     font-size: 25px;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
+    width: 9vw;
+    height: 9vw;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+    padding: .2em;
     margin: .2em;
   }
 }

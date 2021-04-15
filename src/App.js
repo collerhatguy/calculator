@@ -9,11 +9,12 @@ function App() {
   const [display, setDisplay] = useState("");
   const [answer, setAnswer] = useState("");
   const [advanced, setAdvanced] = useState(false);
-  const [validity, errorMessage] = useVerify(display);
+  const [validity, errorMessage, ghostAnswer, setGhostAnswer] = useVerify(display);
   const findAnswer = () => {
     // if we get an error message return
     if (!validity) return;
     setAnswer(evaluate(display))
+    setGhostAnswer("")
     setDisplay(JSON.stringify(evaluate(display)))
   }
   const allClear = () => {
@@ -22,7 +23,7 @@ function App() {
   }
   return (
     <div className="app">
-      <Display error={errorMessage} display={display} answer={answer} />
+      <Display error={errorMessage} display={display} answer={answer} ghostAnswer={ghostAnswer} />
       <ButtonList setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer} advanced={advanced}/>
       <button className="advanced-button" onClick={() => setAdvanced(!advanced)}>Advanced</button>
     </div>

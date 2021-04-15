@@ -3,12 +3,14 @@
 // 2. an error message
 // 3. a function that rechecks whether the diplay is valid
 import {useState, useEffect} from "react"
+import { evaluate } from "mathjs";
 
 
 
 export default function useVerify(input) {
     const [errorMessage, setErrorMessage] = useState("");
     const [validity, setValidity] = useState(true);
+    const [ghostAnswer, setGhostAnswer] = useState("");
     // for stopping invalid inputs
     const verifyInput = (answer) => {
 
@@ -20,12 +22,13 @@ export default function useVerify(input) {
         // if there are no errors than continue 
         setErrorMessage("");
         setValidity(true);
+        setGhostAnswer(evaluate(input))
         return;
     }
     useEffect(() => {
         verifyInput(input)
     }, [input])
-    return [validity, errorMessage]
+    return [validity, errorMessage, ghostAnswer, setGhostAnswer];
 }
 
 const checkParentheses = (answer, setErrorMessage, setValidity) => {
@@ -37,14 +40,14 @@ const checkParentheses = (answer, setErrorMessage, setValidity) => {
         if (parenthesesCount < 0) {
             setErrorMessage("Invalid parentheses")
             setValidity(false)
-            return
+            return false;
         }
     }
     // if out count doest return to zero than the parentheses are unequel
-    if (!parenthesesCount === 0) {
+    if (!(parenthesesCount === 0)) {
         setErrorMessage("Invalid parentheses")
         setValidity(false)
-        return
+        return false;
     }
     return true;
 }

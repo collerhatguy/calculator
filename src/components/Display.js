@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Display({error, display, answer}) {
+export default function Display({error, display, answer, ghostAnswer}) {
     return (
         <div id="displayContainer">
             <h2>
@@ -9,6 +9,9 @@ export default function Display({error, display, answer}) {
                 </div>
                 <div>
                     {display} =
+                </div>
+                <div id="ghost-answer">
+                    {ghostAnswer}
                 </div>
                 <div>
                     {answer}

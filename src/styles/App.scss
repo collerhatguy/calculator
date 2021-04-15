@@ -49,6 +49,13 @@ $tertiary-color: red;
     width: 70%;
     text-align: center;
 }
+#ghost-answer {
+    color: grey;
+    background-color: black;
+    width: min-content;
+    padding: 0 .2em;
+    margin: 0 auto;
+}
 
 /* 3. buttons spacing */
 .all-buttons {
@@ -103,7 +110,7 @@ button {
         opacity: 0;
     }
     to {
-        width: $button-size;
+        width: $button-size-medium;
         opacity: 1;
     }
 }
