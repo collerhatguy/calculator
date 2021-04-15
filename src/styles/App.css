@@ -3,11 +3,11 @@
 /*      a. variables */
 /*      b. centering */
 /*      c. mixins */
-/*      d. media queries */
 /* 2. display container */
 /* 3. buttons spacing*/
 /* 4. buttons styling */
 /* 5. animation */
+/* 6. media queries */
 /* 1. varibales and default stats */
 * {
   margin: 0px;
@@ -17,7 +17,6 @@
 /*      b. centering */
 #root, .app {
   width: 100vw;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +33,6 @@
 }
 
 /*      c. mixins */
-/*      d. media queries */
 /* 2. display container */
 #displayContainer {
   border: dotted 5px black;
@@ -139,5 +137,28 @@ button {
 
 .hidden {
   display: none;
+}
+
+/* 6. media queries */
+@media screen and (max-width: 521px) {
+  button {
+    font-size: 25px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: .2em;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  button {
+    font-size: 30px;
+    width: 9vw;
+    height: 9vw;
+    margin: .2em;
+  }
 }
 /*# sourceMappingURL=App.css.map */
