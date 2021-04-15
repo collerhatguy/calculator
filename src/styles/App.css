@@ -158,9 +158,9 @@ button {
     min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
-    min-height: -webkit-max-content;
-    min-height: -moz-max-content;
-    min-height: max-content;
+    min-height: -webkit-min-content;
+    min-height: -moz-min-content;
+    min-height: min-content;
     padding: .2em;
     margin: .2em;
   }

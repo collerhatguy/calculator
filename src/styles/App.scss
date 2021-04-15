@@ -12,9 +12,7 @@
 
 /* 1. varibales and default stats */
     // a. variables
-$button-size-small: 9vw;
 $button-size-medium: 9vw;
-$button-size-large: 9vw;
 $primary-color: black;
 $secondary-color: white;
 $tertiary-color: red;
@@ -50,8 +48,8 @@ $tertiary-color: red;
     text-align: center;
 }
 #ghost-answer {
-    color: grey;
-    background-color: black;
+    color: hsl(0, 0%, 70%);
+    background-color: hsl(0, 0%, 0%);
     width: min-content;
     padding: 0 .2em;
     margin: 0 auto;
@@ -127,7 +125,7 @@ button {
         width: $button-size-small;
         height: $button-size-small;
         min-width: max-content;
-        min-height: max-content;
+        min-height: min-content;
         padding: .2em;
         margin: .2em;
     }
@@ -135,8 +133,6 @@ button {
 @media screen and (min-width: 700px) {
     button {
         font-size: 30px;
-        width: $button-size-large;
-        height: $button-size-large;
         margin: .2em;
     }
 }
