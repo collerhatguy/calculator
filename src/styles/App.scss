@@ -41,6 +41,11 @@ $tertiary-color: red;
 
 
 /* 2. display container */
+.app {
+    width: 90vw;
+    margin: 10px auto;
+    box-shadow: .2em .2em .2em black;
+}
 #displayContainer {
     border: dotted 5px $primary-color;
     padding: .2em;
