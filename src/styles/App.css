@@ -34,6 +34,13 @@
 
 /*      c. mixins */
 /* 2. display container */
+.app {
+  width: 90vw;
+  margin: 10px auto;
+  -webkit-box-shadow: .2em .2em .2em black;
+          box-shadow: .2em .2em .2em black;
+}
+
 #displayContainer {
   border: dotted 5px black;
   padding: .2em;
@@ -42,7 +49,7 @@
 }
 
 #ghost-answer {
-  color: grey;
+  color: #b3b3b3;
   background-color: black;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -89,27 +96,93 @@ button {
   width: 9vw;
   height: 9vw;
   margin: .2em;
+  background-color: black;
+  color: white;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+button:hover {
+  color: black;
+  background-color: white;
+}
+
+button:focus {
+  outline: none;
   color: black;
   background-color: white;
 }
 
 .number {
+  background-color: white;
+  color: black;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.number:hover {
+  color: white;
+  background-color: black;
+}
+
+.number:focus {
+  outline: none;
   color: white;
   background-color: black;
 }
 
 .non-number {
+  background-color: black;
+  color: white;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.non-number:hover {
+  color: black;
+  background-color: white;
+}
+
+.non-number:focus {
+  outline: none;
   color: black;
   background-color: white;
 }
 
 .ac {
   background-color: red;
+  color: black;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.ac:hover {
+  color: red;
+  background-color: black;
+}
+
+.ac:focus {
+  outline: none;
+  color: red;
+  background-color: black;
 }
 
 .equals {
-  background-color: black;
+  background-color: red;
+  color: white;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.equals:hover {
   color: red;
+  background-color: white;
+}
+
+.equals:focus {
+  outline: none;
+  color: red;
+  background-color: white;
 }
 
 .advanced-button {
@@ -120,7 +193,7 @@ button {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  padding: 0 .2em;
+  padding: 0 .8em;
 }
 
 /* 5. animation */
@@ -153,8 +226,6 @@ button {
 @media screen and (max-width: 360px) {
   button {
     font-size: 25px;
-    width: 9vw;
-    height: 9vw;
     min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
@@ -169,8 +240,6 @@ button {
 @media screen and (min-width: 700px) {
   button {
     font-size: 30px;
-    width: 9vw;
-    height: 9vw;
     margin: .2em;
   }
 }

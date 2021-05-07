@@ -38,7 +38,20 @@ $tertiary-color: red;
     height: $button-size-medium;
     margin: .2em;
 }
-
+@mixin coloring($prime-color, $other-color) {
+    background-color: $prime-color;
+    color: $other-color;
+    transition-duration: 300ms;
+    &:hover {
+        color: $prime-color;
+        background-color: $other-color;
+    }
+    &:focus {
+        outline: none;
+        color: $prime-color;
+        background-color: $other-color;
+    }
+}
 
 /* 2. display container */
 .app {
@@ -81,28 +94,24 @@ $tertiary-color: red;
 
 button {
     @include button();
-    color: $primary-color;
-    background-color: $secondary-color;
+    @include coloring($primary-color, $secondary-color);
 }
 .number {
-    color: $secondary-color;
-    background-color: $primary-color;
+    @include coloring($secondary-color, $primary-color);
 }
 .non-number {
-    color: $primary-color;
-    background-color: $secondary-color;
+    @include coloring($primary-color, $secondary-color);
 }
 .ac {
-    background-color: $tertiary-color;
+    @include coloring($tertiary-color, $primary-color);
 }
 .equals {
-    background-color: $primary-color;
-    color: $tertiary-color;
+    @include coloring($tertiary-color, $secondary-color);
 }
 .advanced-button {
     @include button();
     width: min-content;
-    padding: 0 .2em;
+    padding: 0 .8em;
 }
 
 /* 5. animation */
@@ -127,8 +136,6 @@ button {
 @media screen and (max-width: 360px) {
     button {
         font-size: 25px;
-        width: $button-size-small;
-        height: $button-size-small;
         min-width: max-content;
         min-height: min-content;
         padding: .2em;
