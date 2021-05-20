@@ -13,7 +13,7 @@ export default function ButtonList({setDisplay, allClear, findAnswer, advanced})
                 {inputs.map((input, index) => {
                     return <Input 
                                 input={input} 
-                                setDisplay={() => setDisplay(prevDisplay => prevDisplay + input)} 
+                                setDisplay={() => setDisplay(prevDisplay => prevDisplay + input)}
                                 key={index}
                             />
                 })}
