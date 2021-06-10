@@ -28,9 +28,7 @@
 
 @mixin button() {
     font-size: 2rem;
-    width: $button-size-medium;
-    height: $button-size-medium;
-    margin: .2rem;
+    width: 100%;
 }
 @mixin coloring($prime-color, $other-color) {
     background-color: $prime-color;
@@ -49,9 +47,10 @@
     box-shadow: .2rem .2rem .2rem black;
 }
 #displayContainer {
-    font-size: 2rem;
+    font-size: 3rem;
     border: dotted 5px $primary-color;
-    padding: .2rem;
+    padding: 1rem;
+    min-width: min-content;
     width: 70%;
     text-align: center;
 }
