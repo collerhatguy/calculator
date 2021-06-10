@@ -133,8 +133,6 @@ body {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
 }
 
 .buttons-advanced {
@@ -235,21 +233,17 @@ button:focus, button:hover {
 /* 5. animation */
 @-webkit-keyframes rising {
   from {
-    width: 0%;
     opacity: 0;
   }
   to {
-    width: 100%;
     opacity: 1;
   }
 }
 @keyframes rising {
   from {
-    width: 0%;
     opacity: 0;
   }
   to {
-    width: 100%;
     opacity: 1;
   }
 }

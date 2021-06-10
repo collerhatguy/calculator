@@ -75,7 +75,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    transition-duration: 500ms;
 }
 .buttons-advanced {
     width: 100%;
@@ -114,11 +113,9 @@ button {
 
 @keyframes rising {
     from {
-        width: 0%;
         opacity: 0;
     }
     to {
-        width: 100%;
         opacity: 1;
     }
 }
