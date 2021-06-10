@@ -22,11 +22,11 @@ function App() {
     setDisplay("")
   }
   return (
-    <div className="app">
+    <section className="app">
       <Display error={errorMessage} display={display} answer={answer} ghostAnswer={ghostAnswer} />
       <ButtonList setDisplay={setDisplay} allClear={allClear} findAnswer={findAnswer} advanced={advanced}/>
       <button className="advanced-button" onClick={() => setAdvanced(!advanced)}>Advanced</button>
-    </div>
+    </section>
   );
 }
 

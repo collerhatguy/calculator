@@ -12,19 +12,13 @@
 
 /* 1. varibales and default stats */
     // a. variables
-$button-size-medium: 9vw;
-$primary-color: black;
-$secondary-color: white;
-$tertiary-color: red;
+@import "./variables";
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
+@import "./reset";
 
 /*      b. centering */
 #root, .app {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,20 +27,16 @@ $tertiary-color: red;
 /*      c. mixins */
 
 @mixin button() {
-    font-size: 20px;
+    font-size: 2rem;
     width: $button-size-medium;
     height: $button-size-medium;
-    margin: .2em;
+    margin: .2rem;
 }
 @mixin coloring($prime-color, $other-color) {
     background-color: $prime-color;
     color: $other-color;
     transition-duration: 300ms;
-    &:hover {
-        color: $prime-color;
-        background-color: $other-color;
-    }
-    &:focus {
+    &:focus,  &:hover {
         outline: none;
         color: $prime-color;
         background-color: $other-color;
@@ -55,13 +45,13 @@ $tertiary-color: red;
 
 /* 2. display container */
 .app {
-    width: 90vw;
-    margin: 10px auto;
-    box-shadow: .2em .2em .2em black;
+    margin: 1rem auto;
+    box-shadow: .2rem .2rem .2rem black;
 }
 #displayContainer {
+    font-size: 2rem;
     border: dotted 5px $primary-color;
-    padding: .2em;
+    padding: .2rem;
     width: 70%;
     text-align: center;
 }
@@ -69,26 +59,31 @@ $tertiary-color: red;
     color: hsl(0, 0%, 70%);
     background-color: hsl(0, 0%, 0%);
     width: min-content;
-    padding: 0 .2em;
+    padding: 0 .2rem;
     margin: 0 auto;
 }
 
 /* 3. buttons spacing */
 .all-buttons {
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: baseline;
 }
 .normal-buttons {
+    width: 50%;
     display: grid;
-    grid-template-columns: repeat(4, $button-size-medium + 2vw);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
 .buttons-advanced {
+    width: 10%;
     display: grid;
-    grid-template-columns: $button-size-medium + 2vw;
-    grid-template-rows: repeat(5, $button-size-medium + 1vw);
+    grid-template-columns: .2fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
     animation: rising 500ms linear forwards;
-    margin: .2em;
+    margin: .2rem;
 }
 /* 4. buttons styling */
 
@@ -111,18 +106,19 @@ button {
 .advanced-button {
     @include button();
     width: min-content;
-    padding: 0 .8em;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 /* 5. animation */
 
 @keyframes rising {
     from {
-        width: 0vw;
+        width: 0%;
         opacity: 0;
     }
     to {
-        width: $button-size-medium;
+        width: 100%;
         opacity: 1;
     }
 }
@@ -135,16 +131,16 @@ button {
 
 @media screen and (max-width: 360px) {
     button {
-        font-size: 25px;
+        font-size: 2rem;
         min-width: max-content;
         min-height: min-content;
-        padding: .2em;
-        margin: .2em;
+        padding: .2rem;
+        margin: .2rem;
     }
 }
 @media screen and (min-width: 700px) {
     button {
-        font-size: 30px;
-        margin: .2em;
+        font-size: 3rem;
+        margin: .2rem;
     }
 }
