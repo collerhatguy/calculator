@@ -86,8 +86,8 @@ body {
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
 }
 
 /*      c. mixins */
@@ -118,39 +118,36 @@ body {
 
 /* 3. buttons spacing */
 .all-buttons {
-  width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+  gap: 1rem;
 }
 
 .normal-buttons {
-  width: 50%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 .buttons-advanced {
-  width: 10%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: .2fr;
-      grid-template-columns: .2fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   -ms-grid-rows: (1fr)[5];
       grid-template-rows: repeat(5, 1fr);
   gap: 1rem;
   -webkit-animation: rising 500ms linear forwards;
           animation: rising 500ms linear forwards;
-  margin: .2rem;
 }
 
 /* 4. buttons styling */

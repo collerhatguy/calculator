@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-flow: column wrap;
 }
 /*      c. mixins */
 
@@ -65,25 +65,25 @@
 
 /* 3. buttons spacing */
 .all-buttons {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 1rem;
 }
 .normal-buttons {
-    width: 50%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    transition-duration: 500ms;
 }
 .buttons-advanced {
-    width: 10%;
+    width: 100%;
     display: grid;
-    grid-template-columns: .2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     gap: 1rem;
     animation: rising 500ms linear forwards;
-    margin: .2rem;
 }
 /* 4. buttons styling */
 
