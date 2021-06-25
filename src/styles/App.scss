@@ -19,6 +19,7 @@
 /*      b. centering */
 #root, .app {
     width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +45,6 @@
 /* 2. display container */
 .app {
     margin: 1rem auto;
-    box-shadow: .2rem .2rem .2rem black;
 }
 #displayContainer {
     font-size: 3rem;
@@ -64,7 +64,8 @@
 
 /* 3. buttons spacing */
 .all-buttons {
-    width: 80%;
+    width: 40%;
+    height: 40vw;
     display: grid;
     grid-template-columns: 1fr 5fr;
     gap: 1rem;
@@ -125,7 +126,11 @@ button {
 
 /* 6. media queries */
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 420px) {
+    .all-buttons {
+        width: 80%;
+        height: min-content;
+    }
     button {
         font-size: 2rem;
         min-width: max-content;
