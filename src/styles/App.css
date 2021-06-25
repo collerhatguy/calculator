@@ -79,9 +79,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -153,7 +152,7 @@ body {
 
 /* 4. buttons styling */
 button {
-  font-size: 2rem;
+  font-size: 4rem;
   width: 100%;
   background-color: black;
   color: white;
@@ -220,7 +219,7 @@ button:focus, button:hover {
 }
 
 .advanced-button {
-  font-size: 2rem;
+  font-size: 4rem;
   width: 100%;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -252,7 +251,7 @@ button:focus, button:hover {
 }
 
 /* 6. media queries */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 700px) {
   .all-buttons {
     width: 80%;
     height: -webkit-min-content;
@@ -260,22 +259,8 @@ button:focus, button:hover {
     height: min-content;
   }
   button {
-    font-size: 2rem;
-    min-width: -webkit-max-content;
-    min-width: -moz-max-content;
-    min-width: max-content;
-    min-height: -webkit-min-content;
-    min-height: -moz-min-content;
-    min-height: min-content;
-    padding: .2rem;
-    margin: .2rem;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  button {
     font-size: 3rem;
-    margin: .2rem;
+    padding: .5rem;
   }
 }
 /*# sourceMappingURL=App.css.map */
