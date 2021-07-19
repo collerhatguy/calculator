@@ -88,6 +88,11 @@ const checkOrder = (answer, setErrorMessage, setValidity) => {
             setValidity(false)
             return false;
         }
+        if (answer.charAt(i-1) === "e" && answer.charAt(i) === "e") {
+            setErrorMessage("Those two cant be next to each other")
+            setValidity(false)
+            return false;
+        }
     }
     return true;
 }
