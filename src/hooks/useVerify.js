@@ -1,25 +1,18 @@
-// this is where i would like to build a hook that takes the diplay veriable and returns
-// 1. a varible that says whether its valid
-// 2. an error message
-// 3. a function that rechecks whether the diplay is valid
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 import { evaluate } from "mathjs";
-
 
 
 export default function useVerify(input) {
     const [errorMessage, setErrorMessage] = useState("");
     const [validity, setValidity] = useState(true);
     const [ghostAnswer, setGhostAnswer] = useState("");
-    // for stopping invalid inputs
     const verifyInput = (answer) => {
-
         if (!checkLength(answer, setErrorMessage, setValidity)) return; 
         if (!checkEnd(answer, setErrorMessage, setValidity)) return; 
         if (!checkStart(answer, setErrorMessage, setValidity)) return; 
         if (!checkParentheses(answer, setErrorMessage, setValidity)) return; 
-        if (!checkOrder(answer, setErrorMessage, setValidity)) return; 
-        // if there are no errors than continue 
+        if (!checkOrder(answer, setErrorMessage, setValidity)) return;
+
         setErrorMessage("");
         setValidity(true);
         setGhostAnswer(evaluate(input))
@@ -28,6 +21,7 @@ export default function useVerify(input) {
     useEffect(() => {
         verifyInput(input)
     }, [input])
+    
     return [validity, errorMessage, ghostAnswer, setGhostAnswer];
 }
 
